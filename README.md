@@ -2,7 +2,7 @@
 =====================
 Jan 1 2017 (406,410,..)
  
-1.**406 Queue Reconstruction by Height**  Suppose you have a random list of people standing in queue. Each Person is described by a pair of integers (h,k), where h is the height of the person and k is the number of people infront of person who have a height greater than or equal to h. Write an algorithm to reconstruct the queue.
+1. **406 Queue Reconstruction by Height**  Suppose you have a random list of people standing in queue. Each Person is described by a pair of integers (h,k), where h is the height of the person and k is the number of people infront of person who have a height greater than or equal to h. Write an algorithm to reconstruct the queue.
 
    example:
 
@@ -41,4 +41,11 @@ subarrays. write an algorithm to minimize the largest sum among these m subarray
 
 	"apple", ["plain", "amber", "blade"] -> "1p3" (other valid answers include "ap3", "a3e", "2p2", "3le", "3l1").
 	```
- 
+5. **320 Generalized Abbreviation** Write a function to generate the generalized abbreviations of a word.
+
+	example:
+	```
+	input:"word"
+	output: ["word", "1ord", "w1rd", "wo1d", "wor1", "2rd", "w2d", "wo2", "1o1d", "1or1", "w1r1", "1o2", "2r1", "3d", "w3", "4"] 
+	```
+
