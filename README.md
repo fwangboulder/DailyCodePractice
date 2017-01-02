@@ -1,6 +1,6 @@
 # DailyCodePractice
 =====================
-Jan 1 2017 (406,410,..)
+Jan 1 2017 (406, 410, 408, 411, 320) Day1
  
 1. **406 Queue Reconstruction by Height**  Suppose you have a random list of people standing in queue. Each Person is described by a pair of integers (h,k), where h is the height of the person and k is the number of people infront of person who have a height greater than or equal to h. Write an algorithm to reconstruct the queue.
 
