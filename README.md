@@ -48,48 +48,43 @@ subarrays. write an algorithm to minimize the largest sum among these m subarray
 	input:"word"
 	output: ["word", "1ord", "w1rd", "wo1d", "wor1", "2rd", "w2d", "wo2", "1o1d", "1or1", "w1r1", "1o2", "2r1", "3d", "w3", "4"]
 	```
-  ===========
-  Jan 02 2015 by Fang Wang Practice 2
-
-  1. 151 Reverse Words in a String  Medium
-
-    reverse the string word by word.
-
-    ```
-    input: s="the sky is blue"
-    output: return "blue is sky the"
-    ```
-2. 238 Product of Array Except Self Medium
-
-    Given an array of n integers where n>1, nums, return an array output such that output[i] is equal to the product of all the elements of nums except num[i].
-
-    Solved it without division and in O(n)
-
-    ```
-    input: [1,2,3,4]
-    return:[24,12,8,6]
-    ```
-
-3. 338 Counting Bits Medium
-
-    Given a non negative integer number num, 0<=i<=num, count 1 for i's binary representation and return them as an array.
-
-    ```
-    Input: 5
-    output: [0,1,1,2,1,2]
-    ```
-
-4. 121 Best Time to Buy and Sell Stock easy
-
-    same as 122 but you were only permitted to complete at most one transaction. Find the maximum profit.
-
-    ```
-    Input: [7,1,5,3,6,4]
-
-    output: 5
-    ```
+================
+  **Jan 02 2017 by Fang Wang**
 
 
-5. 122 Best Time to Buy and Sell Stock II  Medium
-    array: the ith element is the price of a given stack on day i
-    design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times. However, you must sell the stock before you buy it again.
+1. **151 Reverse Words in a String**  Medium
+
+      reverse the string word by word.
+
+      input: s="the sky is blue"
+      output: return "blue is sky the"
+
+2. **238 Product of Array Except Self** Medium
+
+      Given an array of n integers where n>1, nums, return an array output such that output[i] is equal to the product of all the elements of nums except num[i].
+
+      Solved it without division and in O(n)
+
+      input: [1,2,3,4]
+      return:[24,12,8,6]
+
+3. **338 Counting Bits** Medium
+
+      Given a non negative integer number num, 0<=i<=num, count 1 for i's binary representation and return them as an array.
+
+      Input: 5
+      output: [0,1,1,2,1,2]
+
+4. **121 Best Time to Buy and Sell Stock** easy
+
+      same as 122 but you were only permitted to complete at most one transaction. Find the maximum profit.
+
+      Input: [7,1,5,3,6,4]
+
+      output: 5
+
+
+
+5. **122 Best Time to Buy and Sell Stock II**  Medium
+      array: the ith element is the price of a given stack on day i
+      design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times. However, you must sell the stock before you buy it again.
