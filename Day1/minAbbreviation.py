@@ -41,4 +41,4 @@ ass Solution(object):
                 if len(tmpstr) < len(res):
                     res = tmpstr
         return res
-#Go back and redo this problems again soon to better understand the idea.
+# Go back and redo this problems again soon to better understand the idea.
