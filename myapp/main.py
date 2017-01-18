@@ -17,11 +17,16 @@
 import webapp2
 
 form="""
-<form method='post' action="/testform">
-    <input type="password" name='q'>
+<form method='get'>
+    <input type="password" name='r'>
+    <input type="radio" name='q' value='one'>
+    <input type="radio" name='q' value='two'>
+    <input type="radio" name='q' value='three'>
+
     <input type="submit">
 </form>
 """
+#input type: checkbox radio
 #input type is text by default,  change it to 'password'
 #the default methond is get, set it to post
 #action="http://google.com/search"   submit to google
