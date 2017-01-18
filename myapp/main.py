@@ -18,10 +18,11 @@ import webapp2
 
 form="""
 <form method='post' action="/testform">
-    <input name='q'>
+    <input type="password" name='q'>
     <input type="submit">
 </form>
 """
+#input type is text by default,  change it to 'password'
 #the default methond is get, set it to post
 #action="http://google.com/search"   submit to google
 
