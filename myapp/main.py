@@ -17,11 +17,12 @@
 import webapp2
 
 form="""
-<form action="/testform">
+<form method='post' action="/testform">
     <input name='q'>
     <input type="submit">
 </form>
 """
+#the default methond is get, set it to post
 #action="http://google.com/search"   submit to google
 
 class MainHandler(webapp2.RequestHandler):
@@ -32,12 +33,14 @@ class MainHandler(webapp2.RequestHandler):
 #multiple handlers
 
 class TestHandler(webapp2.RequestHandler):
-    def get(self):
+    def post(self):
         q=self.request.get("q")
         self.response.out.write(q)
         #self.response.headers['Content-Type']='text/plain'
         #self.response.out.write(self.request)    #print out HTTP request
 
+        #after set the method to 'post', the function in TestHandler needs to be
+        #changed from get to post.
 app = webapp2.WSGIApplication([('/', MainHandler),("/testform", TestHandler)], debug=True)
 #
 # google app engine hello world
