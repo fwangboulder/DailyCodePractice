@@ -41,6 +41,7 @@ class TestHandler(webapp2.RequestHandler):
 
         #after set the method to 'post', the function in TestHandler needs to be
         #changed from get to post.
+        #check where 'q' goes for the post methond (ans: end of HTTP request)
 app = webapp2.WSGIApplication([('/', MainHandler),("/testform", TestHandler)], debug=True)
 #
 # google app engine hello world
