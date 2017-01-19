@@ -98,10 +98,19 @@ class MainHandler(webapp2.RequestHandler):
             self.write_form("Invalid birthday!",user_month,user_day,user_year)
             #self.response.out.write("Invalid Birthday! %s" % error)
         else:
-            self.response.out.write("Thanks!That is totally a valid date.")
+            self.redirect("/thanks")
+#make a thank handler
+#add a /thank url
+#redirect to thank url
+class ThanksHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.out.write("Thanks!That is totally a valid date.")
 
 
-app = webapp2.WSGIApplication([('/', MainHandler)], debug=True)
+
+
+
+app = webapp2.WSGIApplication([('/', MainHandler),('/thanks',ThanksHandler)], debug=True)
 #
 # google app engine hello world
 
