@@ -3,6 +3,11 @@
 ## minimize code in templates
 ##minimize html in the code
 
+####Templates###
+# seperate different types of code
+# make more readable code
+# more secure websites
+# html that is easier to modify
 
 
 import os
@@ -78,10 +83,10 @@ class MainPage(Handler):
         #     output+=output_shopping
         # output=output % output_hidden
         # self.write(output)
-# class  FizzBuzzHandler(Handler):
-#         def get(self):
-#             n=self.request.get('n',0)
-#             n=n and int(n)
-#             self.render('fizzbuzz.html',n=n)
+class  FizzBuzzHandler(Handler):
+        def get(self):
+            n=self.request.get('n',0)
+            n=n and int(n)
+            self.render('fizzbuzz.html',n=n)
 
-app=webapp2.WSGIApplication([('/',MainPage)], debug=True)
+app=webapp2.WSGIApplication([('/',MainPage),('/fizzbuzz',FizzBuzzHandler)], debug=True)
