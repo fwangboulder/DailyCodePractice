@@ -1,4 +1,12 @@
 # DailyCodePractice
+=======================
+Jan 18, 2017 by Fang
+https://homework2-156201.appspot.com/signup
+
+https://homework1-156122.appspot.com/rot13
+
+Built webapps that responds to user input and redirects the user.
+tools: Google App Engine, Jinja2, Python
 =====================
 Jan 1 2017 (406, 410, 408, 411, 320) Day1
 
