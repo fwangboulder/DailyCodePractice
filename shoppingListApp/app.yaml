@@ -1,4 +1,4 @@
-application: template-lesson
+application: homework2-156201
 version: 1
 runtime: python27
 api_version: 1
@@ -7,6 +7,10 @@ threadsafe: yes
 handlers:
 - url: .*
   script: main.app
+
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
 
 libraries:
 - name: webapp2
