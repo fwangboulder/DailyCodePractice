@@ -1,8 +1,9 @@
+
 # List out all Restaurant Name.
 # add Edit and Delete link (doing nothing at the moment) to each restaurant and add a new page for create
 # new restaurant.
 # add edit link ( able to edit) and a new edit URL
-
+# add delete link (able to delete ) and a new delete URL
 
 # use BaseHTTPServer as a basis for building functioning Web servers.
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
@@ -70,6 +71,25 @@ class WebServerHandler(BaseHTTPRequestHandler):
                     output += "</form></body></html>"
                     self.wfile.write(output)
                     return
+            if self.path.endswith("/delete"):
+                restaurantIDPath = self.path.split("/")[2]
+
+                myRestaurantQuery = session.query(Restaurant).filter_by(
+                    id=restaurantIDPath).one()
+                if myRestaurantQuery:
+                    self.send_response(200)
+                    self.send_header('Content-type', 'text/html')
+                    self.end_headers()
+                    output = ""
+                    output += "<html><body>"
+                    output += "<h1>Are you sure you want to delete %s?" % myRestaurantQuery.name
+                    output += "<form method='POST' enctype = 'multipart/form-data' action = '/restaurants/%s/delete'>" % restaurantIDPath
+                    output += "<input type = 'submit' value = 'Delete'>"
+                    output += "</br></br></br><a href = '/restaurants' > Back to Restaurants</a></br></br>"
+                    output += "</form></body></html>"
+                    self.wfile.write(output)
+                    return
+
             if self.path.endswith("/restaurants"):
                 restaurants = session.query(Restaurant).all()
                 output = ""
@@ -92,7 +112,7 @@ class WebServerHandler(BaseHTTPRequestHandler):
                     # -- Add Edit and Delete Links
                     output += "<a href ='/restaurants/%s/edit' >Edit </a> " % restaurant.id
                     output += "</br>"
-                    output += "<a href =' #'> Delete </a>"
+                    output += "<a href ='/restaurants/%s/delete'> Delete </a>" % restaurant.id
                     output += "</br></br></br>"
 
                 output += "</body></html>"
@@ -108,6 +128,18 @@ class WebServerHandler(BaseHTTPRequestHandler):
 # Make POST method
     def do_POST(self):
         try:
+            if self.path.endswith("/delete"):
+                restaurantIDPath = self.path.split("/")[2]
+                myRestaurantQuery = session.query(Restaurant).filter_by(
+                    id=restaurantIDPath).one()
+                if myRestaurantQuery:
+                    session.delete(myRestaurantQuery)
+                    session.commit()
+                    self.send_response(301)
+                    self.send_header('Content-type', 'text/html')
+                    self.send_header('Location', '/restaurants')
+                    self.end_headers()
+
             if self.path.endswith("/edit"):
                 ctype, pdict = cgi.parse_header(
                     self.headers.getheader('content-type'))
