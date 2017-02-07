@@ -1,7 +1,8 @@
 # List out all Restaurant Name.
-# add Edit and Delete link to each restaurant and add a new page for create
+# add Edit and Delete link (doing nothing at the moment) to each restaurant and add a new page for create
 # new restaurant.
-#add edit link and a new edit URL
+#add edit link ( able to edit) and a new edit URL
+
 
 # use BaseHTTPServer as a basis for building functioning Web servers.
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
