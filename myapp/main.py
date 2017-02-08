@@ -22,10 +22,18 @@ form="""
     <input type="radio" name='q' value='one'>
     <input type="radio" name='q' value='two'>
     <input type="radio" name='q' value='three'>
+    <br>
+    <select name='s'>
+        <option value='1'>one</option>
+        <option value='2'>two</option>
+        <option value='3'>three</option>
+    </select>
 
     <input type="submit">
 </form>
 """
+#<label></label>
+#dropdowns: <select name='s'></select>
 #input type: checkbox radio
 #input type is text by default,  change it to 'password'
 #the default methond is get, set it to post

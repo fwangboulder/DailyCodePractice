@@ -5,11 +5,11 @@ api_version: 1
 threadsafe: yes
 
 handlers:
-- url: /favicon\.ico
-  static_files: favicon.ico
-  upload: favicon\.ico
+#- url: /favicon\.ico
+#  static_files: favicon.ico
+#  upload: favicon\.ico
 
-- url: .*
+- url: .*     # This regex directs all routes to main.app
   script: main.app
 
 libraries:
