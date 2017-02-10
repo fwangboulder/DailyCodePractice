@@ -1,4 +1,5 @@
 from flask import Flask
+#code for SQLAlchemy and database engine in sessionmaker
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Restaurant, MenuItem
@@ -15,6 +16,8 @@ session = DBSession()
 @app.route('/')
 @app.route('/restaurants/<int:restaurant_id>/')
 def restaurantMenu(restaurant_id):
+
+    #grab the first restaurant
     restaurant = session.query(Restaurant).filter_by(id=restaurant_id).one()
     items = session.query(MenuItem).filter_by(restaurant_id=restaurant.id)
     output = ''
