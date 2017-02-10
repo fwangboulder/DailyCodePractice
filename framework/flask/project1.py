@@ -30,7 +30,6 @@ def restaurantMenu(restaurant_id):
         output += '</br>'
         output += '</br>'
     return output
-
 # Task 1: Create route for newMenuItem function here
 
 
