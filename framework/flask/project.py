@@ -16,6 +16,8 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000)
 """
 from flask import Flask
+
+#code for SQLAlchemy and database engine in sessionmaker
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Restaurant, MenuItem
@@ -32,6 +34,7 @@ session = DBSession()
 @app.route('/')
 @app.route('/hello')
 def HelloWorld():
+    #grab the first restaurant
     restaurant = session.query(Restaurant).first()
     items = session.query(MenuItem).filter_by(restaurant_id=restaurant.id)
     output = ''
