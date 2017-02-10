@@ -46,27 +46,58 @@ Add code of sqlalchemy and database engine in sessionmaker
 
 Run:
 
+```
 $python project.py
 
 http://localhost:9000/
+
 http://localhost:9000/hello
+
+```
 
 **project1.py**
 
+```
 $python project1.py
 
 http://localhost:9000/restaurants/1/
+
 http://localhost:9000/restaurants/1/new/
+
 http://localhost:9000/restaurants/1/1/edit/
+
 http://localhost:9000/restaurants/1/1/delete/
+
+```
 
 **project2.py**
 
 apply templates and url_for function
 
+```
 $python project2.py
 
 http://localhost:9000/restaurants/1/menu
+
 http://localhost:9000/restaurants/1/new
+
 http://localhost:9000/restaurants/1/1/edit
+
 http://localhost:9000/restaurants/1/5/delete
+
+```
+
+**project3.py**
+
+add fashing message: flashing works in Flask but uses a concept of sessions.
+sessions are a way web server can store information across multiple web pages.
+
+from flask import flash
+
+```
+$python project3.py
+
+http://localhost:9000/restaurants/1/menu
+
+```
+test flash message by add new item, edit item and delete item.
