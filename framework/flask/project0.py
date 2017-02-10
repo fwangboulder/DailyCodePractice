@@ -1,10 +1,12 @@
-#flask hello world web app
+# flask hello world web app
 from flask import Flask
 
-#create an instance of the Flask class.
+# create an instance of the Flask class.
 app = Flask(__name__)
 
-#decorator wrap functions into app.route function
+# decorator wrap functions into app.route function
+
+
 @app.route('/')
 @app.route('/hello')
 def HelloWorld():
