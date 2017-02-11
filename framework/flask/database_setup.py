@@ -65,6 +65,19 @@ class MenuItem(Base):
     restaurant = relationship(Restaurant)
 
 #####Insert at the end of file#####
+# We added this serialize function to be able to send JSON objects in a
+# serializable format
+    @property
+    def serialize(self):
+
+        return {
+            'name': self.name,
+            'description': self.description,
+            'id': self.id,
+            'price': self.price,
+            'course': self.course,
+        }
+
 
 # create an instance of our create_engine class and point to the database
 # use SQLite 3

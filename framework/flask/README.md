@@ -103,3 +103,34 @@ http://localhost:9000/restaurants/1/menu
 
 ```
 test flash message by add new item, edit item and delete item.
+
+**Styling**
+
+Create a folder called static.
+add styles.css file. Modify all  files in templates.
+
+**project4.py**
+
+Responding with JSON
+
+Add  serialize function to be able to send JSON objects in a
+serializable format in data_setup.py
+
+
+from flask import jsonify
+Making an API Endpoint (make request)
+add function restaurantMenuJSON(restaurant_id)
+Run:
+
+```
+$python project4.py
+
+http://localhost:9000/restaurants/1/menu/JSON
+
+```
+
+Add a JSON Method to get one specific menu item
+function: menuItemJSON(restaurant_id, menu_id)
+
+```
+http://localhost:9000/restaurants/1/menu/1/JSON
