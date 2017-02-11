@@ -134,3 +134,18 @@ function: menuItemJSON(restaurant_id, menu_id)
 
 ```
 http://localhost:9000/restaurants/1/menu/1/JSON
+
+```
+
+
+###########################################
+
+**Iterative Development**
+
+Checklist:
+1. Mock-ups
+2. Add Routes
+3. Add templates and forms
+4. CRUD functionality
+5. API endpoints
+6. styling app and flash message.
