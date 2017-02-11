@@ -173,6 +173,27 @@ Knowledge required:
 Python, Flask web development framework, JavaScript,
 using JQuery to make Ajax calls
 
-$python project5.py
+      **How to run it?**
 
-http://localhost:9000/login
+      1. Go to templates folder. type in your correct client ID in login.html file
+      (How to get it? read AutheticationAuthorization/README.md)
+
+      2. Download ClientID JSON file and rename it as client_secrets.json, store
+      it in flask folder, same as project5.py.
+
+      3. $python project5.py
+
+      4. http://localhost:9000/login
+
+      5. If you see an error about JSON serializable. update your versions of Flask.
+
+        ```
+        $pip install werkzeug==0.8.3
+
+        $pip install flask==0.9
+
+        $pip install Flask-Login==0.1.3
+
+        Note: If you get a permissions error, you will need to include sudo at the beginning of each command. That should look like this: sudo pip install flask==0.9
+
+        ```
