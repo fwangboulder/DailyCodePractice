@@ -36,7 +36,7 @@
           <span class="g-signin"
 
             data-scope="openid email"
-            data-clientid="your client ID"
+            data-clientid="Your client ID"
             data-redirecturi="postmessage"
             data-accesstype="offline"
             data-cookiepolicy="single_host_origin"
@@ -64,7 +64,7 @@
                 if (result) {
                   $('#result').html('Login Successful!</br>'+ result + '</br>Redirecting...')
                  setTimeout(function() {
-                  window.location.href = "/restaurants";
+                  window.location.href = "/restaurants/1/menu";
                  }, 4000);
 
               } else if (authResult['error']) {
