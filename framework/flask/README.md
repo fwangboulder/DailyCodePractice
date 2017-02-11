@@ -74,6 +74,8 @@ http://localhost:9000/restaurants/1/1/delete/
 
 apply templates and url_for function
 
+Create a folder called templates.
+
 ```
 $python project2.py
 
