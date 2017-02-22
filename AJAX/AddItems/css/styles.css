@@ -1,0 +1,38 @@
+* {
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+}
+
+body {
+    background: blue;
+    margin: 2em;
+}
+
+.controls {
+    text-align: center;
+    margin: 0 auto 1em;
+}
+
+.item-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    background: green;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    width: 100px;
+    margin: .5em;
+}
+
+.remove-item {
+    background: #000;
+    color: #FFF;
+    padding: 0.25em;
+    text-decoration: none;
+    border-radius: 3px;
+}
