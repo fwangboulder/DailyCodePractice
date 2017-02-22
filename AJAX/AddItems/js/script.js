@@ -16,13 +16,13 @@ $(function() {
             });
             view.render();
         },
-
+        // change the clicked item to invisible
         removeItem: function(item) {
             var clickedItem = data.items[ item.id - 1 ];
             clickedItem.visible = false;
             view.render();
         },
-
+        // get a list of visible items
         getVisibleItems: function() {
             var visibleItems = data.items.filter(function(item) {
                 return item.visible;
