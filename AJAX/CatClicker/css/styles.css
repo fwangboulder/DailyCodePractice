@@ -1,0 +1,36 @@
+h1, h2{
+  text-align: center;
+}
+h1 {
+  color: green;
+}
+h2 {
+  color: blue;
+}
+#cat-img {
+  display: block;
+  margin: auto;
+  width: 550px;
+  height: 550px;
+}
+
+#cat-list {
+  font-weight:bold;
+
+}
+
+#cat-list div  {
+      text-align: center;
+      padding-top: 10px;
+     padding-right: 10px;
+     padding-bottom: 10px;
+     padding-left:10px;
+}
+
+#cat div {
+  padding-top: 10px;
+ padding-right: 10px;
+ padding-bottom: 10px;
+ padding-left:10px;
+ background-color: gray;
+}
