@@ -114,6 +114,7 @@ var catView = {
         // on click, increment the current cat's counter
         this.catImageElem.addEventListener('click', function(){
             octopus.incrementCounter();
+						adminView.render();
         });
 
         // render this view (update the DOM elements with the right values)
@@ -124,7 +125,7 @@ var catView = {
         // update the DOM elements with values from the current cat
         var currentCat = octopus.getCurrentCat();
         this.countElem.textContent = currentCat.clickCount+' clicks';
-        this.catNameElem.textContent = 'Current Cat: '+ currentCat.name;
+        this.catNameElem.textContent = currentCat.name;
         this.catImageElem.src = currentCat.imgSrc;
     }
 };
@@ -153,7 +154,7 @@ var catListView = {
             cat = cats[i];
 
             // make a new cat list item and set its text
-            elem = document.createElement('h3');
+            elem = document.createElement('h1');
             elem.textContent =  cat.name;
 
             // on click, setCurrentCat and render the catView
@@ -172,6 +173,32 @@ var catListView = {
         }
     }
 };
+// var catListView= {
+// 	init: function() {
+// 		var elem, i;
+// 		var cats=octopus.getCats();
+// 		for (i=0; i<cats.length; i++) {
+// 			cat=cats[i];
+// 			elem=document.createElement('li');
+// 			elem.addEventListener('click', (function(catCopy) {
+// 				return function() {
+// 					octopus.setCurrentCat(catCopy);
+// 					catView.render();
+// 					adminView.render();
+// 				};
+// 			})(cat));
+// 			document.getElementById('cat-list').appendChild(elem);
+// 		}
+// 		this.render();
+// 	},
+// 	render: function() {
+// 		var list=document.getElementsByTagName('li');
+// 		var cats=octopus.getCats();
+// 		for (var i=0; i<list.length; i++) {
+// 			list[i].innerHTML = cats[i].name;
+// 		}
+// 	}
+// };
 
 //Admin View
 var adminView = {
