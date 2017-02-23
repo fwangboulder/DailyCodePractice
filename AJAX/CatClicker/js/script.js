@@ -163,6 +163,7 @@ var catListView = {
                 return function() {
                     octopus.setCurrentCat(catCopy);
                     catView.render();
+										adminView.render();
                 };
             })(cat));
 
