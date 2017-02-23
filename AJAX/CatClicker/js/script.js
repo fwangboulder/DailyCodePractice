@@ -9,9 +9,12 @@
 // Octopus:
 // View: two views, one is for the cat list and the other is for the cat detail views
 //CatView and CatListView, each view has its own render methods.
+
+//Model try to add admin button
 var model = {
 		//data currentCat and Cats list
     currentCat: null,
+		adminShow: false,
     cats: [
         {
             clickCount : 0,
@@ -31,6 +34,8 @@ var model = {
     ]
 };
 
+
+//octopus
 var octopus = {
 
     init: function() {
@@ -42,6 +47,9 @@ var octopus = {
         catListView.init();
 
         catView.init();
+
+				// add adminView
+				adminView.init();
     },
 
     getCurrentCat: function() {
@@ -62,7 +70,36 @@ var octopus = {
         model.currentCat.clickCount++;
 				//update the catView
         catView.render();
-    }
+    },
+
+		//admin: add admin and four updates
+		admin: function() {
+			model.adminShow = !model.adminShow;
+			if (model.adminShow) {
+				adminView.show();
+				adminView.render();
+			}
+			else {
+				adminView.hide();
+			}
+		},
+
+		updateName: function(newName) {
+			model.currentCat.name = newName;
+		},
+		updateimgSrc: function(newimgSrc) {
+			model.currentCat.imgSrc = newimgSrc;
+		},
+		updateclickCount: function(newclickCount) {
+			model.currentCat.clickCount = newclickCount;
+		},
+
+		updateViews: function() {
+			adminView.render();
+			catListView.render();
+			catView.render();
+		}
+
 };
 
 var catView = {
@@ -116,7 +153,7 @@ var catListView = {
             cat = cats[i];
 
             // make a new cat list item and set its text
-            elem = document.createElement('h1');
+            elem = document.createElement('h3');
             elem.textContent =  cat.name;
 
             // on click, setCurrentCat and render the catView
@@ -133,6 +170,59 @@ var catListView = {
             this.catListElem.appendChild(elem);
         }
     }
+};
+
+//Admin View
+var adminView = {
+	init: function() {
+		this.adminButton = document.getElementById('adminButton');
+		this.form = document.getElementById('adminForm');
+		this.inputName=document.getElementById('inputName');
+		this.inputimgSrc=document.getElementById('inputimgSrc');
+		this.inputclickCount=document.getElementById('inputclickCount');
+		this.hide();
+		this.saveButton = document.getElementById('saveButton');
+		this.cancelButton=document.getElementById('cancelButton');
+		this.adminButton.addEventListener('click', function() {
+			octopus.admin();
+		});
+		this.cancelButton.addEventListener('click', function(event) {
+			// event.preventDefault();
+			octopus.admin();
+		});
+		this.saveButton.addEventListener('click', function(event) {
+			// event.preventDefault();
+			var newName, newimgSrc, newclickCount;
+			newName = adminView.inputName.value;
+			newimgSrc = adminView.inputimgSrc.value;
+			newclickCount = adminView.inputclickCount.value;
+			if (newName!==null && newName!=="") {
+				octopus.updateName(newName);
+			}
+			if (newimgSrc!==null && newimgSrc!=="") {
+				octopus.updateimgSrc(newimgSrc);
+			}
+			if (newclickCount!==null && newclickCount!=="") {
+					octopus.updateclickCount(newclickCount);
+			}
+			octopus.updateViews();
+		});
+	},
+	show: function() {
+		this.form.style.visibility= 'visible';
+	},
+	hide: function() {
+		this.form.style.visibility = 'hidden';
+	},
+
+	render: function() {
+		var currentCat=octopus.getCurrentCat();
+		document.getElementById('adminForm').reset();
+		this.inputName.placeholder=currentCat.name;
+		this.inputimgSrc.placeholder=currentCat.imgSrc;
+		this.inputclickCount.placeholder=currentCat.clickCount;
+	}
+
 };
 
 // make it go!

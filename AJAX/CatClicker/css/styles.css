@@ -10,10 +10,18 @@ h2 {
 p  {
   color: red;
 }
+.admin {
+  font-weight: bold;
+  font-size: 200%;
+  color: red;
+}
+.adminButton {
+  background-color: yellow;
+}
 #cat-img {
   display: block;
   margin: auto;
-  width: 300px;
+  width: 250px;
   height: 300px;
 }
 

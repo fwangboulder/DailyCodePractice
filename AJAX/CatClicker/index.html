@@ -14,24 +14,53 @@ The specifics of the layout do not matter, so style it however you'd like. -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
     <link rel='stylesheet' href='css/styles.css'>
     <title>Cat Clicker</title>
 </head>
 <body>
   <div class='flex-container'>
     <div class='flex-item'>
-  <h1>Click to pick one cat: </h1>
+  <h3>Click to pick one cat: </h3>
     <ol id="cat-list"></ol>
-    <p> Click the image to increase count for each of cat!</p>
+
   </div>
   <div class='flex-item'>
     <div id="cat">
         <h2 id="cat-name"></h2>
         <h2 id="cat-count"></h2>
         <img id="cat-img" src="" alt="cute cat">
+        <p> Click the cat image to increase count for each of cat!</p>
+
     </div>
   </div>
+  <div class='flex-item'>
+    <button type="submit" class="adminButton" id="adminButton">
+    Admin Mode
+    </button>
+    <form id='adminForm'>
+    	<p>Cat Name:
+    	<input type ='text' size='30' name='name' id = 'inputName' placeholder='cat name'>
+    </p>
+      <p>Image Src:
+      <input type ='text' size='30' name='name' id= 'inputimgSrc' placeholder='img/cat*.jpg'>
+      </p>
+      <p>click Count:
+      <input type ='text' size='30' name='name' id = 'inputclickCount' placeholder='# of clicks'>
+      </p>
+    </br>
+    	<button type="button" class="btn btn-default" id="saveButton">
+    		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    		Save
+    	</button>
+      <button type="button" class="btn btn-default delete" id='cancelButton'>
+    		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    		Cancel
+    	</button>
+    </form>
+  </div>
 </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
