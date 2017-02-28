@@ -96,3 +96,11 @@ OS X users: brew install cowsay
 Arch Linux users: sudo pacman -S cowsay
 
 Note: You typically need to be a “superuser” to install new software, that’s why these install commands begin with the sudo command . You can learn more about sudo in our Configuring Linux Web Servers course or on Wikipedia.
+
+
+Different shells
+Unix and Linux programmers over the years have written many different shell programs. You can read more about them on Wikipedia: the original Bourne shell or sh; the C shell or csh; the Korn shell or ksh; the Z shell or zsh; as well as the bash shell that this course uses.
+
+Different systems may have different shells installed by default. Most Linux systems, and Mac OS X, default to bash for interactive shells. However, the most common default shell for scripting (shell programming) is classic sh. BSD Unix systems usually default to sh or ksh.
+
+Almost everything in this course will work the same in any of these shell programs. The exception is one of the file matching (globbing) syntaxes at the end of Lesson 3.
