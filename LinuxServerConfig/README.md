@@ -44,3 +44,55 @@ Open your terminal program. Type this shell command and press Enter:
 cd Desktop/Shell
 
 (If your new folder is called something other than "Shell", or is located somewhere other than "Desktop", change those.)
+
+$ exit
+you logout
+
+$ vagrant ssh
+you log back in.
+
+If vagrant ssh doesn't work
+If you get a message like this:
+
+VM must be running to open SSH connection. Run `vagrant up`
+to start the virtual machine.
+This means that the VM program is not running, for instance because you rebooted your computer. This is just fine and it doesn't mean you've lost any work. Just run vagrant up to bring the VM back up, then vagrant ssh to log in.
+
+This will not take as long as the first time you ran it, because it won't need to download the Linux OS.
+
+If vagrant up doesn't work
+If you get a message like this:
+
+A Vagrant environment or target machine is required to run this
+command. Run `vagrant init` to create a new Vagrant environment. Or,
+get an ID of a target machine from `vagrant global-status` to run
+this command on. A final option is to change to a directory with a
+Vagrantfile and to try again.
+That means that vagrant can't find the configuration file you downloaded. Go back to the instructions, check to be sure that you did step 5, and then do step 6 again.
+
+Multiple terminals
+If you open up more than one terminal window, only the one(s) that you ran vagrant ssh in will be connected to your Linux OS for this course. The others will be connected to your regular OS.
+
+(It's actually really normal for Linux users to have to carefully keep track of which terminal windows are connected to which machines. Don't panic. Just look for whether "vagrant" appears on the command line.)
+
+
+$ curl http://udacity.github.io/ud595-shell/stuff.zip -o things.zip
+
+$ls
+
+things.zip
+
+Quiz: The Terminal Interface
+If you'd like to use the cowsay program outside of the VM, on your own computer, you can install it like this:
+
+Ubuntu and Debian users: sudo apt-get install cowsay
+
+Redhat and CentOS users: sudo yum install cowsay
+
+OS X users: brew install cowsay
+
+(This requires the homebrew, a third party package manager for OS X, http://brew.sh/)
+
+Arch Linux users: sudo pacman -S cowsay
+
+Note: You typically need to be a “superuser” to install new software, that’s why these install commands begin with the sudo command . You can learn more about sudo in our Configuring Linux Web Servers course or on Wikipedia.
