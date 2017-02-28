@@ -104,3 +104,38 @@ Unix and Linux programmers over the years have written many different shell prog
 Different systems may have different shells installed by default. Most Linux systems, and Mac OS X, default to bash for interactive shells. However, the most common default shell for scripting (shell programming) is classic sh. BSD Unix systems usually default to sh or ksh.
 
 Almost everything in this course will work the same in any of these shell programs. The exception is one of the file matching (globbing) syntaxes at the end of Lesson 3.
+
+Test for commands in the shell:
+vagrant@vagrant-ubuntu-trusty-64:~$ date
+Tue Feb 28 07:06:00 UTC 2017
+vagrant@vagrant-ubuntu-trusty-64:~$ expr 2+2
+2+2
+vagrant@vagrant-ubuntu-trusty-64:~$ echo You rock
+You rock
+vagrant@vagrant-ubuntu-trusty-64:~$ uname
+Linux
+vagrant@vagrant-ubuntu-trusty-64:~$ hostname
+vagrant-ubuntu-trusty-64
+vagrant@vagrant-ubuntu-trusty-64:~$ host udacity.com
+udacity.com has address 45.79.141.183
+udacity.com mail is handled by 20 alt1.aspmx.l.google.com.
+udacity.com mail is handled by 20 alt2.aspmx.l.google.com.
+udacity.com mail is handled by 30 aspmx2.googlemail.com.
+udacity.com mail is handled by 30 aspmx3.googlemail.com.
+udacity.com mail is handled by 10 aspmx.l.google.com.
+vagrant@vagrant-ubuntu-trusty-64:~$ bash --version
+GNU bash, version 4.3.11(1)-release (x86_64-pc-linux-gnu)
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+vagrant@vagrant-ubuntu-trusty-64:~$ history
+
+Vagrant commands:
+vagrant status
+vagrant suspend
+vagrant up
+vagrant ssh
+vagrant halt
+vagrant destroy
