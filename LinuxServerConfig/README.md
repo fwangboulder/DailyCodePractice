@@ -260,3 +260,47 @@ Then log in the student
 $ssh student@127.0.0.1 -p 2222 -i ~/.ssh/linuxCourse
 i flag and the key pair definitions will allow you to login in
 if there is a passphrase for the key pair, enter it.
+
+disable the password base login, and this will force all of your users
+to only be able to login using a key pair.
+To do this: $sudo nano /etc/ssh/sshd_config
+edit the configuration file for SSHD.
+PasswordAuthetication yes
+change it to no
+Then restart the service:
+$sudo service ssh restart
+
+File permissions
+$ls -al
+d or -  directory or file
+the other three sections: owner, group, everyone
+
+change file group:
+$sudo chgrp root .bash_history
+change file owner:
+$sudo chown root .bash_history
+
+Default ports for popular Services:
+HTTP: 80
+SSH:22
+POP3:110
+HTTPS:443
+FTP:21
+SMTP:25
+
+Ubuntu comes with a firewall called ufw
+$ sudo ufw status
+
+$sudo ufw default deny incoming
+$sudo ufw default allow outgoing
+
+configuring Ports in UFW:
+SSH adminisrater the server:
+$sudo ufw allow SSH
+
+Vagrant set up our SSH on Port 2222
+$sudo ufw allow 2222/tcp
+
+allow http services
+$ sudo ufw allow www
+$sudo ufw enable
