@@ -139,3 +139,124 @@ vagrant up
 vagrant ssh
 vagrant halt
 vagrant destroy
+
+**Linux Security************************************
+
+vagrant ssh: login in as a standard user vagrant
+
+List all of the files within the ubuntu users ssh directory.
+$ ls -al /home/ubuntu/.ssh
+permission deny!!
+
+$ sudo ls -al /home/ubuntu/.ssh
+run as if a root user
+
+get Linux software: package source list.
+$cat /etc/apt/sources.list
+
+Keep software up to date with new releases.
+$sudo apt-get update
+$sudo apt-get upgrade
+$man apt-get
+get help for apt-get commands
+
+$sudo apt-get autoremove
+
+$sudo apt-get install finger
+install new software
+
+Discovering packages:
+visit packages.ubuntu.com
+common packages:  
+Apache HTTP Server:apache2
+PostgreSQL:  postgresql
+Memcache: memcached
+
+Use finger:
+$finger
+$finger vagrant
+username vagrant
+
+$cat /etc/passwd
+file stored information about each user.
+vagrant:x:1000:1000::/home/vagrant:/bin/bash
+
+username: encryped passwords:userID:GroupID::homeDir:User's default shell
+the hardware was too slow to crack a
+well chosen password, thus encryped passwd can be ignored.
+empty field is used to store a description about the user.
+
+root:x:0:0:root:/root:/bin/bash
+
+
+add a new user:
+$sudo adduser student
+Enter new UNIX password: student
+reenter: student
+change the user information for student: Full Name[]: Udacity Linux student
+
+$finger student
+Login: student        			Name: Udacity Linux Student
+Directory: /home/student            	Shell: /bin/bash
+Never logged in.
+In local machine, connecting as the New User:
+ $ssh student@127.0.0.1 -p 2222
+
+ ssh remotely connect to the server
+ 127.0.0.1 is the IP address (localhost address) we want to connect to.
+ port 2222
+
+ $sudo cat /etc/passwd
+ student@vagrant-ubuntu-trusty-64:~$ sudo cat /etc/passwd
+[sudo] password for student:
+student is not in the sudoers file.  This incident will be reported.
+
+go back to vagrant connction: $sudo cat /etc/sudoers
+change student to sudo users.
+
+$sudo ls /etc/sudoers.d
+$sudo cp /etc/sudoers.d/vagrant /etc/sudoers.d/student
+$sudo nano /etc/sudoers.d/student
+
+# CLOUD_IMG: This file was created/modified by the Cloud Image build process
+student  ALL=(ALL) NOPASSWD:ALL
+
+$sudo cat /etc/passwd
+student:x:1002:1002:Udacity Linux Student,,,:/home/student:/bin/bash
+
+User password expiration:
+sudo passwd -e student
+
+Authentication Method:
+Public key encryption:
+server to client : random message
+client to server: encrypt the message with private key
+server: decrypt message with public key and see if message is the same as sent out.
+
+Generate key pairs in local computer.
+$ssh-keygen
+Enter file in which to save the key: /Users/
+this path:/Users/Udacity/.ssh/linuxCourse (default)
+Enter passphrase:
+
+supported key types: DSA, ECDSA,ED25519, RSA
+$ man apt-get ssh-keygen
+check -t type
+
+Installing a Public Key in user student connection:
+$mkdir .ssh
+create a .ssh directory
+
+$touch .ssh/authorized_keys
+
+in local computer:
+$cat .ssh/linuxCourse.pub
+copy the .pub content and paste it to authorized_keys
+$nano .ssh/authorized_keys
+$chmod 700 .ssh
+$chmod 644 .ssh/authorized_keys
+
+Then log in the student
+$ssh student@127.0.0.1 -p 2222 -i ~/.ssh/linuxCourse
+i flag and the key pair definitions will allow you to login in
+if there is a passphrase for the key pair, enter it.
